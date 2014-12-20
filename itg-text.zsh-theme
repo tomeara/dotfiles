@@ -162,7 +162,7 @@ function itg_host() {
 
 function itg_remote() {
   if [ -z "$SSH_CLIENT" ]; then
-    echo -e "%F{$green}[❤ %m]"
+    echo -e "%F{$green}[⫸ %m]"
   else
     echo -e "%F{$magenta}[✈ %m]"
   fi
