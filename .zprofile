@@ -8,7 +8,7 @@ source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 plugins=(git wd)
 
 # Use 256 colors
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 
 # Short-cuts
 alias be='bundle exec'

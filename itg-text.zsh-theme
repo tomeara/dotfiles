@@ -160,6 +160,14 @@ function itg_host() {
   echo -e "${item}"
 }
 
+function itg_remote() {
+  if [ -z "$SSH_CLIENT" ]; then
+    echo -e "%F{$green}[⫸ %m]"
+  else
+    echo -e "%F{$magenta}[✈ %m]"
+  fi
+}
+
 ZSH_THEME_GIT_PROMPT_PREFIX=''
 ZSH_THEME_GIT_PROMPT_SUFFIX=''
 ZSH_THEME_GIT_PROMPT_DIRTY=''
@@ -195,7 +203,7 @@ function precmd {
   tmp=$(ruby --version | cut -d' ' -f 1-2)
   ruby_version=${tmp/p/-p}
   PROMPT="
-%F{$blue}[%W - %@] %F{$red}| $(itg_dir) %F{$red}| %F{$normal}$(itg_git)%F{$normal}$(itg_pair)%f
+$(itg_remote) %F{$blue}[%W - %@] %F{$red}| $(itg_dir) %F{$red}| %F{$normal}$(itg_git)%F{$normal}$(itg_pair)%f
 %F{$cyan}❯%F{$normal} "
   #RPROMPT="%F{$fade}$(itg_host)"
   RPROMPT="%F{$magenta}[$ruby_version]%F{$normal}"
