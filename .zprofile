@@ -20,3 +20,4 @@ source ~/.bin/tmuxinator.zsh
 alias be='bundle exec'
 alias ber='bundle exec rails'
 alias rm_orig='rm -rf ./**/*.orig'
+alias ne='PATH=$(npm bin):$PATH'
