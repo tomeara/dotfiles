@@ -1,3 +1,11 @@
 *.swp
 .DS_Store
 .netrwhist
+
+# never commit credentials, even if a backup script picks one up
+auth.json
+**/auth.json
+agents/vault/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

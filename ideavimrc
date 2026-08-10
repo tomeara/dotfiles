@@ -1,0 +1,88 @@
+set vim-surround
+set NERDTree
+
+let mapleader=" "
+
+" Move lines
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Search stuff
+set incsearch
+set hlsearch
+set smartcase
+nmap <Leader>/ :nohl<cr>
+
+" Ignore .git et all from results
+set wildignore+=*/.hg/*,*/.svn/*,*/bower_components/*,*/node_modules/*,*/tmp/*
+
+
+" Remap the default leader to next character, since I use <Space> for leader
+nnoremap \;
+vnoremap \;
+" Remap command to not have to use <Shift>
+nnoremap ; :
+vnoremap ; :
+
+" Autocomplete command mode
+set wildmenu
+set wildmode=list:longest,full
+
+" Remap Esc
+imap jk <Esc>
+
+" Tab stuff correctly
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+
+" Remap Esc
+vmap <Leader><Leader> <Esc>
+
+" Shortcut to visual line mode
+nmap <Leader><Leader> V
+
+" NERDTree
+nnoremap <Leader>n :NERDTreeToggle<CR>
+
+"Splits and Navigation
+nnoremap <c-w><c-v> :action SplitVertically<CR>
+nnoremap <c-w><c-s> :action SplitHorizontally<CR>
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+" nmap nn :action GoToNextError<CR>
+" nmap NN :action GoToPreviousError<CR>
+
+" Test runner mappings
+nnoremap <Leader>t :action DebugClass<CR>
+nnoremap <Leader>s :action ContextDebug<CR>
+nnoremap <Leader>L :action RerunFailedTests<CR>
+nnoremap <Leader>l :action RerunTests<CR>
+nnoremap <Leader>a :action RunMenu<CR>
+
+" File search
+nnoremap <Leader>o :action FindInPath<CR>
+nnoremap <Leader>p :action FindUsages<CR>
+nnoremap <Leader><Tab> :action Switcher<CR>
+
+" Refactor
+nnoremap <Leader>r :action RenameElement<CR>
+nnoremap <Leader>R :action Refactorings.QuickListPopupAction<CR>
+
+" Breakpoint
+nnoremap <Leader>b :action ToggleLineBreakpoint<CR>
+
+" Documentation
+nnoremap <Leader>d :action QuickJavaDoc<CR>
+
+" Commenting
+nnoremap <Leader>cl :action CommentByLineComment<CR>
+vnoremap <Leader>cl :action CommentByLineComment<CR>
+nnoremap <Leader>cu :action CommentByLineComment<CR>
+vnoremap <Leader>cu :action CommentByLineComment<CR>
+
