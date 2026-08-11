@@ -7,6 +7,11 @@ cp -fv ~/.gitmessage ./.gitmessage
 mkdir -p ./agents
 cp -fv ~/.agents/AGENTS.md ./agents/AGENTS.md
 
+# Agent skills — handoff + recall
+mkdir -p ./agents/skills
+rsync -av --delete --exclude '.DS_Store' ~/.agents/skills/handoff/ ./agents/skills/handoff/
+rsync -av --delete --exclude '.DS_Store' ~/.agents/skills/recall/ ./agents/skills/recall/
+
 # Neovim
 mkdir -p ./nvim
 cp -fv ~/.config/nvim/init.vim ./nvim/init.vim

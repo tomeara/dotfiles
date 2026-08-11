@@ -20,6 +20,13 @@
 - **Verify before claiming done.** Run tests, check acceptance criteria, and confirm the output matches the expected shape before declaring work complete.
 - **Leave things cleaner than you found them** — but do not refactor beyond the task scope.
 
+### Executing Code Changes: BDD/TDD
+
+- **Establish requirements as tests before writing implementation code.** Tests are the executable specification of the requirement — write them first, then implement against them.
+- **Work outside-in.** Start at the highest level that expresses the requirement and drill down: UI/browser tests → integration tests → unit tests, whenever possible. Lower-level tests emerge from what the outer test needs, not the other way around.
+- **Failing tests are the correct starting point.** It is expected — not a problem — for new tests to fail at first. From there, negotiate the code changes needed to make them pass. Do not weaken or rewrite a test just to get to green; if a test seems wrong, raise it with the user.
+- **Limit mocks.** Prefer real collaborators. Reach for a mock only when deliberately isolating a behavior under test, or at genuine abstractions and the seams between components where substitution makes sense (external services, I/O boundaries). Do not mock what you own mid-stack just for convenience.
+
 ### When to Proceed vs. When to Pause and Ask
 
 **Proceed autonomously when:**
@@ -57,15 +64,15 @@ Every handoff between agents must include these four elements:
 
 ### Session Continuity
 
-Use `/session save|load|list|archive` to manage session files for cross-platform continuity. Session files live in `~/.agents/context/sessions/active/`. The skill handles format, template, and file management.
+Use `/handoff save|load|list|archive` to manage session files for cross-platform continuity. Session files live in `~/.agents/context/sessions/active/`. The skill handles format, template, and file management.
 
 **When to save** (proactively, without being asked): after completing a subtask on a long-running task, before context-heavy operations, when switching topics, before ending a conversation, when approaching context limits.
 
-**When to load**: at the start of any session, check for a matching session file with `/session list`.
+**When to load**: at the start of any session, check for a matching session file with `/handoff list`.
 
 ### Memory
 
-Long-term memory lives in `~/.agents/context/memory/` and persists across sessions, tools, and platforms. Use `/memory save|load|list` to manage memory entries. Entries use frontmatter for lightweight listing — no index file is maintained.
+Long-term memory lives in `~/.agents/context/memory/` and persists across sessions, tools, and platforms. Use `/recall save|load|list` to manage memory entries. Entries use frontmatter for lightweight listing — no index file is maintained.
 
 **When to save**: decisions that affect future sessions, patterns that should be reused, hard-won lessons, open questions that span sessions.
 
