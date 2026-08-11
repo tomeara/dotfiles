@@ -1,12 +1,14 @@
 
+# ^ subject: <type>(<scope>)<!>: <JIRA-KEY> <imperative summary>  (≤72 chars)
+#   types: feat fix refactor perf test docs build ci chore revert
+#   ! + BREAKING CHANGE trailer for breaking changes
 
+What:
+-
+
+Why:
+-
+
+# Trailers — repeat a key for multiple values; delete unused lines
 Jira:
-
-Goals:
-*
-
-How does this work towards the goals:
-*
-
-References:
-*
+Refs:

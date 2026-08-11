@@ -27,6 +27,10 @@
 - **Failing tests are the correct starting point.** It is expected — not a problem — for new tests to fail at first. From there, negotiate the code changes needed to make them pass. Do not weaken or rewrite a test just to get to green; if a test seems wrong, raise it with the user.
 - **Limit mocks.** Prefer real collaborators. Reach for a mock only when deliberately isolating a behavior under test, or at genuine abstractions and the seams between components where substitution makes sense (external services, I/O boundaries). Do not mock what you own mid-stack just for convenience.
 
+### Authoring Commits
+
+Use the `commit` skill (`/commit`) whenever authoring a git commit. Messages follow Conventional Commits v1.0.0 with the Jira key in the subject, `What:`/`Why:` body sections, and repeatable git trailers for references — the skill holds the template and rules. One logical change per commit.
+
 ### When to Proceed vs. When to Pause and Ask
 
 **Proceed autonomously when:**

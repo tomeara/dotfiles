@@ -9,10 +9,11 @@ cp -fv ./.gitmessage ~/.gitmessage
 mkdir -p ~/.agents
 cp -fv ./agents/AGENTS.md ~/.agents/AGENTS.md
 
-# Agent skills — handoff + recall
+# Agent skills — handoff + recall + commit
 mkdir -p ~/.agents/skills
 rsync -av ./agents/skills/handoff/ ~/.agents/skills/handoff/
 rsync -av ./agents/skills/recall/ ~/.agents/skills/recall/
+rsync -av ./agents/skills/commit/ ~/.agents/skills/commit/
 
 # Neovim
 mkdir -p ~/.config/nvim
